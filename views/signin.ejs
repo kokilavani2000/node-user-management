@@ -8,7 +8,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sign In| TailAdmin - Tailwind CSS Admin Dashboard Template</title>
-  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+  <link rel="icon" href="/src/favicon.ico"><link href="/src/style.css" rel="stylesheet"></head>
   <body
     x-data="{ page: 'comingSoon', 'loaded': true, 'darkMode': false, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
     x-init="
@@ -38,7 +38,7 @@
         <div class="flex flex-col flex-1 w-full lg:w-1/2">
           <div class="w-full max-w-md pt-10 mx-auto">
             <a
-              href="index.html"
+              href="/"
               class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
             >
               <svg
@@ -217,7 +217,7 @@
                             <input
                               type="checkbox"
                               id="checkboxLabelOne"
-                              class="sr-only"
+                              class="/sr-only"
                               @change="checkboxToggle = !checkboxToggle"
                             />
                             <div
@@ -285,17 +285,17 @@
           <div class="flex items-center justify-center z-1">
             <!-- ===== Common Grid Shape Start ===== -->
             <div class="absolute right-0 top-0 -z-1 w-full max-w-[250px] xl:max-w-[450px]">
-  <img src="src/images/shape/grid-01.svg" alt="grid" />
+  <img src="/src/images/shape/grid-01.svg" alt="grid" />
 </div>
 <div
   class="absolute bottom-0 left-0 -z-1 w-full max-w-[250px] rotate-180 xl:max-w-[450px]"
 >
-  <img src="src/images/shape/grid-01.svg" alt="grid" />
+  <img src="/src/images/shape/grid-01.svg" alt="grid" />
 </div>
 
             <div class="flex flex-col items-center max-w-xs">
-              <a href="index.html" class="block mb-4">
-                <img src="src/images/logo/auth-logo.svg" alt="Logo" />
+              <a href="/" class="block mb-4">
+                <img src="/src/images/logo/auth-logo.svg" alt="Logo" />
               </a>
               <p class="text-center text-gray-400 dark:text-white/60">
                 Free and Open-Source Tailwind CSS Admin Dashboard Template
@@ -342,5 +342,5 @@
       </div>
     </div>
     <!-- ===== Page Wrapper End ===== -->
-  <script defer src="bundle.js"></script></body>
+  <script defer src="/src/bundle.js"></script></body>
 </html>

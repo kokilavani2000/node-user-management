@@ -1,5 +1,11 @@
 const express = require('express');
 const path = require('path');
+const connectDb = require('./config/db');
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
+
+//load .env
+connectDb();
 
 const app = express();
 
@@ -9,9 +15,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('signin');
 });
 
-app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
+app.get('/register', (req, res) => {
+    res.render('signup');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
