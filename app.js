@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
 const connectDb = require('./config/db');
+const authRoutes = require('./routes/authRoutes');
+const session = require('express-session');
+
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
@@ -14,13 +17,19 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-    res.render('signin');
-});
+// Middleware to parse form data
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.get('/register', (req, res) => {
-    res.render('signup');
-});
+//session use
+app.use(session({
+    secret:'secret-key',
+    resave:false,
+    saveUninitialized:false
+}));
+
+app.use('/', authRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
